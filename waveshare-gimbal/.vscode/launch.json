@@ -1,0 +1,46 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Gimbal: dry-run angle",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/build/vscode/gimbal_test",
+            "args": ["--dry-run", "angle", "${input:pan}", "${input:tilt}"],
+            "cwd": "${workspaceFolder}",
+            "MIMode": "gdb",
+            "miDebuggerPath": "/usr/bin/gdb",
+            "externalConsole": false,
+            "preLaunchTask": "gimbal: build"
+        },
+        {
+            "name": "Gimbal: serial angle",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/build/vscode/gimbal_test",
+            "args": ["${input:device}", "angle", "${input:pan}", "${input:tilt}"],
+            "cwd": "${workspaceFolder}",
+            "MIMode": "gdb",
+            "miDebuggerPath": "/usr/bin/gdb",
+            "externalConsole": false,
+            "preLaunchTask": "gimbal: build"
+        },
+        {
+            "name": "Gimbal: serial stop",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/build/vscode/gimbal_test",
+            "args": ["${input:device}", "stop"],
+            "cwd": "${workspaceFolder}",
+            "MIMode": "gdb",
+            "miDebuggerPath": "/usr/bin/gdb",
+            "externalConsole": false,
+            "preLaunchTask": "gimbal: build"
+        }
+    ],
+    "inputs": [
+        {"id": "device", "type": "promptString", "description": "Serial device path (WSL/Linux)", "default": "/dev/ttyUSB0"},
+        {"id": "pan", "type": "promptString", "description": "Pan angle X (-180..180 degrees)", "default": "10"},
+        {"id": "tilt", "type": "promptString", "description": "Tilt angle Y (-30..90 degrees)", "default": "0"}
+    ]
+}

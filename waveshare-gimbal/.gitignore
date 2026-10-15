@@ -1,0 +1,11 @@
+# CMake build directories
+/build/
+/cmake-build-*/
+
+# Generated files from in-source builds
+/CMakeFiles/
+/CMakeCache.txt
+/cmake_install.cmake
+/Makefile
+/compile_commands.json
+/gimbal_test
