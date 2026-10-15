@@ -1,0 +1,21 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "gimbal: configure",
+            "type": "process",
+            "command": "cmake",
+            "args": ["-S", "${workspaceFolder}", "-B", "${workspaceFolder}/build/vscode", "-DCMAKE_BUILD_TYPE=Debug", "-DCMAKE_EXPORT_COMPILE_COMMANDS=ON"],
+            "problemMatcher": []
+        },
+        {
+            "label": "gimbal: build",
+            "type": "process",
+            "command": "cmake",
+            "args": ["--build", "${workspaceFolder}/build/vscode", "--parallel"],
+            "dependsOn": "gimbal: configure",
+            "group": {"kind": "build", "isDefault": true},
+            "problemMatcher": ["$gcc"]
+        }
+    ]
+}

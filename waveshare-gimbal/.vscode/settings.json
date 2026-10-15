@@ -1,0 +1,6 @@
+{
+    "cmake.sourceDirectory": "${workspaceFolder}",
+    "cmake.buildDirectory": "${workspaceFolder}/build/vscode",
+    "cmake.configureSettings": {"CMAKE_EXPORT_COMPILE_COMMANDS": true},
+    "C_Cpp.default.compileCommands": "${workspaceFolder}/build/vscode/compile_commands.json"
+}
