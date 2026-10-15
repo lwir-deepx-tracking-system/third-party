@@ -98,7 +98,7 @@ int main(int argc, char* argv[]) {
             command = R"({"T":135})";
         }
         else if (action == "home" && argc == 3) {
-            command = R"({"T":133,"X":0,"Y":0,"SPD":100,"ACC":50})";
+            command = R"({"T":133,"X":0,"Y":0,"SPD":30,"ACC":50})";
         }
         else if ((action == "angle" || action == "move") && argc == 5) {
             int x = std::stoi(argv[3]);
@@ -112,7 +112,7 @@ int main(int argc, char* argv[]) {
 
                 os << "{\"T\":133,\"X\":" << x
                    << ",\"Y\":" << y
-                   << ",\"SPD\":100,\"ACC\":50}";
+                   << ",\"SPD\":30,\"ACC\":50}";
             }
             else {
                 if (x < -1 || x > 1 || y < -1 || y > 1)
@@ -120,7 +120,7 @@ int main(int argc, char* argv[]) {
 
                 os << "{\"T\":141,\"X\":" << x
                    << ",\"Y\":" << y
-                   << ",\"SPD\":100}";
+                   << ",\"SPD\":30}";
             }
 
             command = os.str();
